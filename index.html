@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Are you a Pink Lady?</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "Branboll";
+      src: url(./fonts/brannboll/BrannbollSmal.ttf) format("truetype");
+    }
+    @font-face {
+      font-family: "Branboll";
+      font-weight: bold;
+      src: url(./fonts/brannboll/BrannbollFet.ttf) format("truetype");
+    }
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    svg {
+      width: min(100vw, 100vh);
+      height: min(100vw, 100vh);
+    }
+    h1 {
+      /* margin-top: max(-0.5vw, -0.5vh); */
+      margin-top: min(5vw, 5vh);
+      font-size: min(20vw, 20vh);
+      font-family: "Branboll", cursive, sans-serif;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      line-height: 1em;
+      transform: rotate(-7deg);
+      vertical-align: center;
+      outline: none;
+      font-style: italic;
+      -webkit-print-color-adjust: exact;
+    }
+    .center-on-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: min(100vw, 100vh);
+      height: min(100vw, 100vh);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    @media screen {
+      body {
+        background-color: black;
+      }
+    }
+  </style>
+  <body>
+    <svg
+      version="1.1"
+      viewBox="0 0 100 100"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m66.324 0.85862c-5.4457 0.36624-10.663 1.9642-15.402 4.68-1.3908 0.72681-2.623 1.7397-3.967 2.5176-0.94372 0.17498-1.6763-0.64375-2.5654-0.82643-6.719-2.6184-14.469-2.4791-21.151-0.067146-4.0831 1.4056-7.9094 3.997-11.292 6.8313-7.6274 7.0649-10.352 16.032-11.046 25.486-0.25823 3.6769 0.14833 7.4274 0.70726 11.047 1.2387 8.8954 7.0225 16.865 11.519 24.552 4.9293 8.2356 8.6721 14.17 15.906 22.78 0.52645 0.51479 1.0662 1.0158 1.5981 1.5249 6.7178-2.5866 13.483-5.0771 19.936-8.31 7.6619-3.8162 15.492-7.5519 22.503-12.429 9.5511-6.593 17.942-15.253 22.468-26.052 3.4042-8.2448 4.6061-17.258 2.8181-26.015-1.7543-8.6925-7.1912-16.559-14.72-21.247-4.2998-2.7166-9.2607-4.1801-14.307-4.4233-0.92792-0.053564-2.0199-0.067134-3.0038-0.048582z"
+        style="
+          fill: #fff;
+          stroke-opacity: 0.49741;
+          stroke-width: 0.25;
+          stroke: #979797;
+        "
+      />
+      <path
+        d="m34.416 84.044c0.87403-1.7634 0.95746-2.2082 0.9574-5.104-5.7e-5 -2.8481-0.0922-3.36-0.90167-5.0098-1.4823-3.021-4.3156-6.2405-9.462-10.752-5.6156-4.9226-7.4614-6.8931-10.011-10.688-3.3125-4.9299-4.999-10.766-4.6447-16.072 0.23906-3.5809 0.87805-5.9055 2.563-9.3237 5.4799-11.117 18.334-16.563 28.635-12.131 0.91844 0.3951 2.7209 1.4724 4.0055 2.3941l2.3356 1.6757 1.7774-1.9198c5.7649-6.2267 14.519-9.2778 22.219-7.7436 8.2661 1.6471 14.613 7.9907 17.101 17.093 0.55943 2.0466 0.69306 3.4018 0.70119 7.1113 0.0088 4.0086-0.10127 5.0185-0.87834 8.0595-3.3243 13.009-11.817 22.856-27.799 32.229-5.9251 3.4751-16.255 8.0921-25.333 11.323l-2.2217 0.79059z"
+        style="fill: #ff008c; stroke-width: 0.0016119"
+      />
+    </svg>
+    <div class="center-on-screen">
+      <h1 contenteditable="true">Pink Lady</h1>
+    </div>
+  </body>
+  <script>
+    const name = new URLSearchParams(location.search).get("name");
+    if (name) {
+      document.querySelector("h1").innerText = name;
+    }
+  </script>
+</html>
